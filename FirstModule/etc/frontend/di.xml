@@ -9,12 +9,35 @@
                 type="SimplifiedMagento\FirstModule\Model\Red"/>
     <preference for="SimplifiedMagento\FirstModule\Api\Size"
                 type="SimplifiedMagento\FirstModule\Model\Large"/>
+
+    <preference for="SimplifiedMagento\FirstModule\Api\Brightness"
+                type="SimplifiedMagento\FirstModule\Model\Medium"/>
+
+    <type name="SimplifiedMagento\FirstModule\Controller\Page\HelloWorld">
+        <plugin name="plugin_on_execute"
+                type="SimplifiedMagento\FirstModule\Plugin\PluginSolution" sortOrder="10" />
+    </type>
+    <type name="SimplifiedMagento\FirstModule\Controller\Page\HelloWorld">
+        <plugin name="plugin_on_execute2"
+                type="SimplifiedMagento\FirstModule\Plugin\PluginSolution2" sortOrder="20" />
+    </type>
+    <type name="SimplifiedMagento\FirstModule\Controller\Page\HelloWorld">
+        <plugin name="plugin_on_execute3"
+                type="SimplifiedMagento\FirstModule\Plugin\PluginSolution3" sortOrder="30" />
+    </type>
+    <virtualType name="virtualType"  type="SimplifiedMagento\FirstModule\Model\Yellow">
+        <arguments>
+            <argument name="brightness" xsi:type="object">SimplifiedMagento\FirstModule\Model\HIgh</argument>
+        </arguments>
+    </virtualType>
+
     <type name="SimplifiedMagento\FirstModule\Model\Pencil">
         <arguments>
-            <argument name="color" xsi:type="object">SimplifiedMagento\FirstModule\Model\Yellow</argument>
+            <argument name="color" xsi:type="object">virtualType</argument>
             <argument name="size" xsi:type="object">SimplifiedMagento\FirstModule\Model\Normal</argument>
         </arguments>
     </type>
+
     <type name="SimplifiedMagento\FirstModule\Model\Student">
         <arguments>
             <argument name="name" xsi:type="string">Bob</argument>
