@@ -2,4 +2,7 @@
     <event name="checkout_submit_all_after">
         <observer name="log_text" instance="SimplifiedMagento\FirstModule\Observer\LogTextAtCheckout" />
     </event>
+    <event name="custom_event">
+        <observer name="greeting" instance="SimplifiedMagento\FirstModule\Observer\OurObserver" />
+    </event>
 </config>

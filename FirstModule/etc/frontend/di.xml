@@ -1,6 +1,7 @@
+<?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
 
-     <preference for="Magento\Catalog\Api\ProductRepositoryInterface" 
+     <preference for="Magento\Catalog\Api\ProductRepositoryInterface"
      type="SimplifiedMagento\FirstModule\Model\CustomImplementation" />
 
     <preference for="SimplifiedMagento\FirstModule\Api\PencilInterface"
@@ -16,20 +17,22 @@
     <type name="SimplifiedMagento\FirstModule\Controller\Page\HelloWorld">
         <plugin name="plugin_on_execute"
                 type="SimplifiedMagento\FirstModule\Plugin\PluginSolution" sortOrder="10" />
-    </type>
-    <type name="SimplifiedMagento\FirstModule\Controller\Page\HelloWorld">
+
         <plugin name="plugin_on_execute2"
                 type="SimplifiedMagento\FirstModule\Plugin\PluginSolution2" sortOrder="20" />
-    </type>
-    <type name="SimplifiedMagento\FirstModule\Controller\Page\HelloWorld">
+
         <plugin name="plugin_on_execute3"
                 type="SimplifiedMagento\FirstModule\Plugin\PluginSolution3" sortOrder="30" />
+        <arguments>
+            <argument name="heavyService" xsi:type="object">SimplifiedMagento\FirstModule\Model\HeavyService\Proxy</argument>
+        </arguments>
     </type>
     <virtualType name="virtualType"  type="SimplifiedMagento\FirstModule\Model\Yellow">
         <arguments>
             <argument name="brightness" xsi:type="object">SimplifiedMagento\FirstModule\Model\HIgh</argument>
         </arguments>
     </virtualType>
+
 
     <type name="SimplifiedMagento\FirstModule\Model\Pencil">
         <arguments>
@@ -46,6 +49,14 @@
                 <item name="maths" xsi:type="number">100</item>
                 <item name="programming" xsi:type="number">90</item>
 
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="exampleSayHello" xsi:type="object">SimplifiedMagento\FirstModule\Console\Command\HelloWorld</item>
             </argument>
         </arguments>
     </type>
