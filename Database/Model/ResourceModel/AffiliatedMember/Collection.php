@@ -4,7 +4,7 @@
 namespace SimplifiedMagento\Database\Model\ResourceModel\AffiliatedMember;
 
 use SimplifiedMagento\Database\Model\AffiliateMember;
-use PhpCollection\AbstractCollection;
+use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
 use SimplifiedMagento\Database\Model\ResourceModel\AffiliateMember as AffiliateMemeberResource;
 class Collection extends AbstractCollection
 {
