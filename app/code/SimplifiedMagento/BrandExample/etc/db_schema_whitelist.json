@@ -1,0 +1,19 @@
+{
+    "simplified_magento_brand_example": {
+        "column": {
+            "id": true,
+            "name": true,
+            "description": true,
+            "is_enabled": true,
+            "weighing_factor": true,
+            "created_at": true,
+            "updated_at": true,
+            "website_id": true
+        },
+        "constraint": {
+            "SIMPLIFIED_MAGENTO_BRAND_EXAMPLE_WS_ID_STORE_WS_WS_ID": true,
+            "PRIMARY": true,
+            "SIMPLIFIED_MAGENTO_BRAND_EXAMPLE_NAME": true
+        }
+    }
+}
