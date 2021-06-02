@@ -331,7 +331,7 @@ return [
         'SimplifiedMagento_BannerSlider' => 0,
         'SimplifiedMagento_BrandExample' => 1,
         'SimplifiedMagento_Database' => 1,
-        'SimplifiedMagento_FirstModule' => 1,
+        'SimplifiedMagento_HelloWorld' => 1,
         'SimplifiedMagento_RequestFlow' => 0,
         'Amazon_Core' => 1,
         'Amazon_Login' => 1,

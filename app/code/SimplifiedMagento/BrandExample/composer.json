@@ -1,0 +1,20 @@
+{
+  "name": "SimplifiedMagento/module-brand-example",
+  "description": "",
+  "require": {
+    "php": "~5.5.0|~5.6.0|~7.0.0|~7.1.12|~7.4.19",
+    "magento/module-store": "101.1.2|^100.0.0"
+  },
+  "type": "magento2-module",
+  "license": [
+    "proprietary"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "SimplifiedMagento\\BrandExample\\": ""
+    }
+  }
+}

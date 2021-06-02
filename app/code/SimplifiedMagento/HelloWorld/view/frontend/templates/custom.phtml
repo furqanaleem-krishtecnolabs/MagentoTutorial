@@ -1,0 +1,27 @@
+<?php
+$hello=$block->getHelloWorld();
+$helloArray=$block->helloArray();
+        ?>
+<?php foreach($helloArray as $hello):?>
+<ul>
+    <li><?php echo $hello ; ?></li>
+</ul>
+
+<?php endforeach; ?>
+<h2><?php echo $this->getshowHello(); ?></h2>
+<h2><?php print_r($this->getshowArray()); ?></h2>
+<h1><?php echo $hello; ?></h1>
+
+<!--<h3>--><?php //echo $block->getProductName(); ?><!--</h3> -->
+<?php
+//$viewModel=$block->getData('view_model');
+//$hello=$viewModel->getHelloWorld();
+//$helloArray=$viewModel->HelloArray();
+//?>
+<!--<h1>--><?php //echo $hello;?><!--</h1>-->
+<?php //foreach($helloArray as $hello):?>
+<!--    <ul>-->
+<!--        <li>--><?php //echo $hello ; ?><!--</li>-->
+<!--    </ul>-->
+<!---->
+<?php //endforeach; ?>
