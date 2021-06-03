@@ -75,7 +75,8 @@ return [
         'full_page' => 1,
         'config_webservice' => 1,
         'translate' => 1,
-        'vertex' => 1
+        'vertex' => 1,
+        '%hello%' => 1
     ],
     'downloadable_domains' => [
         'localhost'

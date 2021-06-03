@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+                <tab id="Custom_Admin" sortOrder="120" translate="label">
+                    <label>Custom Admin</label>
+                </tab>
+                <section id="First_section" translate="label" sortOrder="100" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>First Section</label>
+                    <tab>Custom_Admin</tab>
+                    <resource>SimplifiedMagento_CustomAdmin::parent</resource>
+                    <group id="First_group" showInWebsite="1" showInStore="1" showInDefault="1">
+                        <label>First Group</label>
+                        <field id="First_field" showInDefault="1" showInStore="1" showInWebsite="1" translate="label"
+                               type="text" sortOrder="100">
+                            <label>First Text Field</label>
+                        </field>
+                        <field id="Second_field" showInDefault="1" showInStore="1" showInWebsite="1" translate="label"
+                               type="select" sortOrder="100">
+                            <label>First Select</label>
+                            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        </field>
+                        <field id="Third_field" showInDefault="1" showInStore="1" showInWebsite="1" translate="label"
+                               type="multiselect" sortOrder="100">
+                            <label>Multi Select</label>
+                            <source_model>SimplifiedMagento\CustomAdmin\Model\AdminArray</source_model>
+                        </field>
+                        <field id="Fourth_field" showInDefault="1" showInStore="1" showInWebsite="1" translate="label"
+                               type="select" sortOrder="100">
+                            <label>Multi Select</label>
+                            <source_model>SimplifiedMagento\CustomAdmin\Model\AdminArray</source_model>
+                        </field>
+                    </group>
+                </section>
+    </system>
+</config>
