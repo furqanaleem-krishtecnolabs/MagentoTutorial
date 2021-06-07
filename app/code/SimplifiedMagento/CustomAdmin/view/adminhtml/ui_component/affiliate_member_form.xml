@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+    <item name="js_config" xsi:type="array">
+        <item name="provider" xsi:type="string">affiliate_member_form.affiliate_member_form_data_source</item>
+        <item name="deps" xsi:type="string">affiliate_member_form.affiliate_member_form_data_source</item>
+    </item>
+    <item name="label" xsi:type="string" translate="true">Member Form</item>
+    <item name="layout" xsi:type="array">
+        <item name="type" xsi:type="string">tabs</item>
+    </item>
+
+    <dataSource name="affiliate_member_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">SimplifiedMagento\CustomAdmin\Model\Ui\DataProvider</argument>
+            <argument name="name" xsi:type="string">affiliate_member_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+                <item name="submit_url" path="*/*/save" xsi:type="url" />
+            </item>
+        </argument>
+    </dataSource>
+
+    <fieldset name="member">
+    <argument name="data" xsi:type="array">
+        <item name="config" xsi:type="array">
+            <item name="label" xsi:type="string" translate="true">Member Fieldset</item>
+        </item>
+    </argument>
+
+    <field name="entity_id">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="visible" xsi:type="boolean">false</item>
+                <item name="dataType" xsi:type="string">text</item>
+                <item name="formElement" xsi:type="string">input</item>
+                <item name="source" xsi:type="string">member</item>
+            </item>
+        </argument>
+    </field>
+
+    <!-- This field has data type 'text' and standard 'input' form element and looks like input -->
+    <field name="name">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string">Name</item>
+                <item name="visible" xsi:type="boolean">true</item>
+                <item name="dataType" xsi:type="string">text</item>
+                <item name="formElement" xsi:type="string">input</item>
+                <item name="source" xsi:type="string">member</item>
+            </item>
+        </argument>
+    </field>
+
+    <field name="address">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string">Address</item>
+                <item name="visible" xsi:type="boolean">true</item>
+                <item name="dataType" xsi:type="string">text</item>
+                <item name="formElement" xsi:type="string">input</item>
+                <item name="source" xsi:type="string">member</item>
+            </item>
+        </argument>
+    </field>
+
+    <field name="status">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="sortOrder" xsi:type="number">10</item>
+                <item name="dataType" xsi:type="string">boolean</item>
+                <item name="formElement" xsi:type="string">checkbox</item>
+                <item name="source" xsi:type="string">member</item>
+                <item name="preffer" xsi:type="string">toggle</item>
+                <item name="label" xsi:type="string" translate="true">Status</item>
+                <item name="valueMap" xsi:type="array">
+                    <item name="true" xsi:type="string">1</item>
+                    <item name="false" xsi:type="string">0</item>
+                </item>
+                <item name="validation" xsi:type="array">
+                    <item name="required-entry" xsi:type="boolean">false</item>
+                </item>
+                <item name="default" xsi:type="string">1</item>
+            </item>
+        </argument>
+    </field>
+
+    <field name="created_at">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="dataType" xsi:type="string">string</item>
+                <item name="label" xsi:type="string">Start Date</item>
+                <item name="formElement" xsi:type="string">date</item>
+                <item name="source" xsi:type="string">member</item>
+                <item name="sortOrder" xsi:type="number">21</item>
+                <item name="validation" xsi:type="array">
+                    <item name="required-entry" xsi:type="boolean">true</item>
+                </item>
+                <item name="options" xsi:type="array">
+                    <item name="dateFormat" xsi:type="string">yyyy-MM-dd</item>
+                    <item name="timeFormat" xsi:type="string">HH:mm:ss</item>
+                    <item name="showsTime" xsi:type="boolean">true</item>
+                </item>
+            </item>
+        </argument>
+    </field>
+
+    <field name="updated_at">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="dataType" xsi:type="string">string</item>
+                <item name="label" xsi:type="string">Updated Date</item>
+                <item name="formElement" xsi:type="string">date</item>
+                <item name="source" xsi:type="string">member</item>
+                <item name="sortOrder" xsi:type="number">21</item>
+                <item name="validation" xsi:type="array">
+                    <item name="required-entry" xsi:type="boolean">true</item>
+                </item>
+                <item name="options" xsi:type="array">
+                    <item name="dateFormat" xsi:type="string">yyyy-MM-dd</item>
+                    <item name="timeFormat" xsi:type="string">HH:mm:ss</item>
+                    <item name="showsTime" xsi:type="boolean">true</item>
+                </item>
+            </item>
+        </argument>
+    </field>
+
+    <field name="phone_number">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string">Phone Number</item>
+                <item name="visible" xsi:type="boolean">true</item>
+                <item name="dataType" xsi:type="string">text</item>
+                <item name="formElement" xsi:type="string">input</item>
+                <item name="source" xsi:type="string">member</item>
+            </item>
+            <item name="validation" xsi:type="array">
+                <item name="validate-digit" xsi:type="boolean">true</item>
+            </item>
+        </argument>
+    </field>
+    </fieldset>
+</form>
