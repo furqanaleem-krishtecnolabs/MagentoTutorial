@@ -330,6 +330,7 @@ return [
         'SimplifiedMagento_Attribute' => 0,
         'SimplifiedMagento_BannerSlider' => 0,
         'SimplifiedMagento_BrandExample' => 0,
+        'SimplifiedMagento_CornJobScheduling' => 1,
         'SimplifiedMagento_CustomAdmin' => 1,
         'SimplifiedMagento_Database' => 1,
         'SimplifiedMagento_FirstModule' => 0,

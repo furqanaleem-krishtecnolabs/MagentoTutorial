@@ -6,7 +6,7 @@ namespace SimplifiedMagento\CustomAdmin\Controller\Adminhtml\Member;
 
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
-use Magento\Cms\Model\PageFactory;
+use Magento\Framework\View\Result\PageFactory;
 use Magento\Framework\App\ResponseInterface;
 use Magento\Framework\Registry;
 use SimplifiedMagento\Database\Model\AffiliateMember;

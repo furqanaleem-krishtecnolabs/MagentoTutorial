@@ -7,14 +7,18 @@ namespace SimplifiedMagento\CustomAdmin\Controller\Adminhtml\Member;
 
 use Magento\Backend\App\Action;
 use Magento\Backend\Model\View\Result\ForwardFactory;
+use Magento\Framework\view\Result\PageFactory;
 
 class NewAction extends Action
 {
     protected $forwardFactory;
+    protected $pageFactory;
     public function __construct(
+        PageFactory $pageFactory,
         ForwardFactory $forwardFactory,
         Action\Context $context)
     {
+        $this->pageFactory=$pageFactory;
         $this->forwardFactory=$forwardFactory;
         parent::__construct($context);
     }

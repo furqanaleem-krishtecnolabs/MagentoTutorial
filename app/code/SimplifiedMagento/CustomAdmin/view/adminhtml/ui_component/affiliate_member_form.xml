@@ -10,6 +10,14 @@
         <item name="type" xsi:type="string">tabs</item>
     </item>
 
+    <item name="buttons" xsi:type="array">
+        <item name="back" xsi:type="string">SimplifiedMagento\CustomAdmin\Block\Adminhtml\Member\Edit\BackButton</item>
+        <item name="delete" xsi:type="string">SimplifiedMagento\CustomAdmin\Block\Adminhtml\Member\Edit\DeleteButton</item>
+        <item name="reset" xsi:type="string">SimplifiedMagento\CustomAdmin\Block\Adminhtml\Member\Edit\ResetButton</item>
+        <item name="save_and_continue" xsi:type="string">SimplifiedMagento\CustomAdmin\Block\Adminhtml\Member\Edit\SaveAndContinue</item>
+        <item name="save" xsi:type="string">SimplifiedMagento\CustomAdmin\Block\Adminhtml\Member\Edit\Save</item>
+
+    </item>
     <dataSource name="affiliate_member_form_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
             <argument name="class" xsi:type="string">SimplifiedMagento\CustomAdmin\Model\Ui\DataProvider</argument>
