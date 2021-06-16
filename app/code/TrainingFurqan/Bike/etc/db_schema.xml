@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="bike_data" resource="default" engine="innodb" comment="Bike Details">
+        <column xsi:type="smallint" name="bike_id" unsigned="false" nullable="false" identity="true"
+                comment="Entity ID"/>
+        <column xsi:type="varchar" name="bike_name" nullable="false" length="255" comment="Bike Name"/>
+        <column xsi:type="varchar" name="company" nullable="false" length="255" comment="Bike Company Name"/>
+        <column xsi:type="varchar" name="country" nullable="false" length="255" comment="Bike Available In Country"/>
+        <column xsi:type="mediumtext" name="bike_description" nullable="true" comment="Description of Bike"/>
+        <column xsi:type="varchar" name="engine_type" nullable="false" length="255" comment="Bike Engine Type"/>
+        <column xsi:type="varchar" name="extra_feature" nullable="false" length="255" comment="Bike Extra Feature"/>
+        <column xsi:type="varchar" name="usage_info" nullable="false" length="255" comment="Bike Usage Info"/>
+        <column xsi:type="varchar" name="image" nullable="false" length="255" comment="Bike Extra Feature"/>
+        <column xsi:type="varchar" name="color" nullable="false" length="255" comment="Bike Color"/>
+        <column xsi:type="timestamp" name="creation_time" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Creation Time"/>
+        <column xsi:type="timestamp" name="update_time" on_update="true" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Modification Time"/>
+        <column xsi:type="smallint" name="is_active" unsigned="false" nullable="false" identity="false"
+                default="1" comment="Is Bike Active"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="bike_id"/>
+        </constraint>
+        <index referenceId="BIKE_TITLE_IDENTIFIER_CONTENT" indexType="fulltext">
+            <column name="bike_name"/>
+            <column name="company"/>
+        </index>
+    </table>
+</schema>

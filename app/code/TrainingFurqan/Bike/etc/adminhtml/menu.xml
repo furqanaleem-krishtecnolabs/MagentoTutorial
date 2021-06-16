@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="TrainingFurqan_Bike::bike_data" title="Bike" translate="title" module="TrainingFurqan_Bike"
+             sortOrder="10" resource="TrainingFurqan_Bike::bike_data" />
+        <add id="TrainingFurqan_Bike::add_row" title="Manage Bike Details" translate="title" module="TrainingFurqan_Bike"
+             sortOrder="20" parent="TrainingFurqan_Bike::bike_data" action="bike/bike"
+             resource="TrainingFurqan_Bike::add_row" />
+    </menu>
+</config>

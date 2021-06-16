@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">bike_form.bike_form_data_source</item>
+            <item name="deps" xsi:type="string">bike_form.bike_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Bike Information</item>
+        <item name="config" xsi:type="array">
+            <item name="dataScope" xsi:type="string">data</item>
+            <item name="namespace" xsi:type="string">bike_form</item>
+        </item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="back" class="TrainingFurqan\Bike\Block\Adminhtml\Bike\Edit\BackButton"/>
+            <button name="reset" class="TrainingFurqan\Bike\Block\Adminhtml\Bike\Edit\ResetButton"/>
+            <button name="save" class="TrainingFurqan\Bike\Block\Adminhtml\Bike\Edit\SaveButton"/>
+            <button name="delete" class="TrainingFurqan\Bike\Block\Adminhtml\Bike\Edit\DeleteButton"/>
+        </buttons>
+        <namespace>bike_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>bike_form.bike_form_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="bike_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">TrainingFurqan\Bike\Model\DataProvider</argument>
+            <argument name="name" xsi:type="string">bike_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">bike_id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="*/*/save"/>
+        </settings>
+    </dataSource>
+    <fieldset name="bike_data">
+        <settings>
+            <collapsible>false</collapsible>
+            <label/>
+        </settings>
+        <field name="bike_name">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Bike Name</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">bike_data</item>
+                    <item name="dataScope" xsi:type="string">bike_name</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
+        <field name="company" formElement="select">
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Select Company</label>
+                <dataScope>company</dataScope>
+            </settings>
+            <formElements>
+                <select>
+                    <settings>
+                        <options>
+                            <option name="1" xsi:type="array">
+                                <item name="value" xsi:type="string">honda</item>
+                                <item name="label" xsi:type="string">Honda</item>
+                            </option>
+                            <option name="2" xsi:type="array">
+                                <item name="value" xsi:type="string">skoda</item>
+                                <item name="label" xsi:type="string">Skoda</item>
+                            </option>
+                            <option name="3" xsi:type="array">
+                                <item name="value" xsi:type="string">bmw</item>
+                                <item name="label" xsi:type="string">BMW</item>
+                            </option>
+                            <option name="4" xsi:type="array">
+                                <item name="value" xsi:type="string">audi</item>
+                                <item name="label" xsi:type="string">Audi</item>
+                            </option>
+                        </options>
+                        <caption translate="true">-- Please Select --</caption>
+                    </settings>
+                </select>
+            </formElements>
+        </field>
+        <field name="country" formElement="multiselect">
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Country Available In</label>
+                <dataScope>country</dataScope>
+            </settings>
+            <formElements>
+                <multiselect>
+                    <settings>
+                        <options>
+                            <option name="1" xsi:type="array">
+                                <item name="value" xsi:type="string">india</item>
+                                <item name="label" xsi:type="string">India</item>
+                            </option>
+                            <option name="2" xsi:type="array">
+                                <item name="value" xsi:type="string">usa</item>
+                                <item name="label" xsi:type="string">USA</item>
+                            </option>
+                            <option name="3" xsi:type="array">
+                                <item name="value" xsi:type="string">canada</item>
+                                <item name="label" xsi:type="string">Canada</item>
+                            </option>
+                            <option name="4" xsi:type="array">
+                                <item name="value" xsi:type="string">uk</item>
+                                <item name="label" xsi:type="string">UK</item>
+                            </option>
+                        </options>
+                    </settings>
+                </multiselect>
+            </formElements>
+        </field>
+        <field name="bike_description" template="ui/form/field" sortOrder="50" formElement="wysiwyg">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="wysiwygConfigData" xsi:type="array">
+                        <item name="height" xsi:type="string">100px</item>
+                        <item name="add_variables" xsi:type="boolean">false</item>
+                        <item name="add_widgets" xsi:type="boolean">false</item>
+                        <item name="add_images" xsi:type="boolean">true</item>
+                        <item name="add_directives" xsi:type="boolean">true</item>
+                    </item>
+                    <item name="source" xsi:type="string">bike_data</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Bike Description</label>
+                <dataScope>bike_description</dataScope>
+            </settings>
+            <formElements>
+                <wysiwyg>
+                    <settings>
+                        <rows>8</rows>
+                        <wysiwyg>true</wysiwyg>
+                    </settings>
+                </wysiwyg>
+            </formElements>
+        </field>
+        <field name="engine_type" formElement="radioset">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Engine Type</label>
+                <dataScope>engine_type</dataScope>
+            </settings>
+            <formElements>
+                <radioset>
+                    <settings>
+                        <options>
+                            <option name="0" xsi:type="array">
+                                <item name="value" xsi:type="string">petrol</item>
+                                <item name="label" xsi:type="string" translate="true">Petrol</item>
+                            </option>
+                            <option name="1" xsi:type="array">
+                                <item name="value" xsi:type="string">battery</item>
+                                <item name="label" xsi:type="string" translate="true">Battery</item>
+                            </option>
+                        </options>
+                        <!--  <validation>
+                            <rule name="required-entry" xsi:type="boolean">true</rule>
+                        </validation>  -->
+                    </settings>
+                </radioset>
+            </formElements>
+        </field>
+        <field name="extra_feature" formElement="checkboxset">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="extra_feature" xsi:type="string">Extra Feature</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Extra Feature</label>
+                <dataScope>extra_feature</dataScope>
+            </settings>
+            <formElements>
+                <checkboxset>
+                    <settings>
+                        <options>
+                            <option name="0" xsi:type="array">
+                                <item name="value" xsi:type="string">extra</item>
+                                <item name="label" xsi:type="string" translate="true">Seat Cover</item>
+                                <item name="checked" xsi:type="string" translate="true">checked</item>
+                            </option>
+                            <option name="1" xsi:type="array">
+                                <item name="value" xsi:type="string">music_sytem</item>
+                                <item name="label" xsi:type="string" translate="true">Side glasses</item>
+                            </option>
+                            <option name="2" xsi:type="array">
+                                <item name="value" xsi:type="string">navigator</item>
+                                <item name="label" xsi:type="string" translate="true">Navigator</item>
+                            </option>
+                        </options>
+                    </settings>
+                </checkboxset>
+            </formElements>
+        </field>
+        <field name="usage_info">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Usage Information</item>
+                    <item name="formElement" xsi:type="string">textarea</item>
+                    <item name="source" xsi:type="string">bike_data</item>
+                    <item name="dataScope" xsi:type="string">usage_info</item>
+                </item>
+            </argument>
+        </field>
+        <field name="image" sortOrder="40" formElement="imageUploader">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">bike_data</item>
+                </item>
+            </argument>
+            <settings>
+                <elementTmpl>ui/form/element/uploader/image</elementTmpl>
+                <dataType>string</dataType>
+                <label translate="true">Bike Image</label>
+                <visible>true</visible>
+                <required>false</required>
+            </settings>
+            <formElements>
+                <imageUploader>
+                    <settings>
+                        <required>false</required>
+                        <uploaderConfig>
+                            <param xsi:type="url" name="url" path="bike/bike_image/upload"/>
+                        </uploaderConfig>
+                        <previewTmpl>Magento_Catalog/image-preview</previewTmpl>
+                        <openDialogTitle>Media Gallery</openDialogTitle>
+                        <initialMediaGalleryOpenSubpath>bike_image</initialMediaGalleryOpenSubpath>
+                        <allowedExtensions>jpg jpeg gif png</allowedExtensions>
+                        <maxFileSize>4194304</maxFileSize>
+                    </settings>
+                </imageUploader>
+            </formElements>
+        </field>
+        <colorPicker name="color" class="Magento\Ui\Component\Form\Element\ColorPicker" component="Magento_Ui/js/form/element/color-picker">
+            <settings>
+                <label translate="true">Color</label>
+                <elementTmpl>ui/form/element/color-picker</elementTmpl>
+                <colorFormat>rgb</colorFormat>
+                <colorPickerMode>full</colorPickerMode>
+                <!-- <source>bike_data</source> -->
+                <dataScope>color</dataScope>
+            </settings>
+        </colorPicker>
+        <field name="is_active" formElement="checkbox">
+            <settings>
+                <label translate="true">Enabled</label>
+                <tooltip>
+                    <description translate="true">Status</description>
+                </tooltip>
+            </settings>
+            <formElements>
+                <checkbox>
+                    <settings>
+                        <prefer>toggle</prefer>
+                        <valueMap>
+                            <map name="false" xsi:type="string">0</map>
+                            <map name="true" xsi:type="string">1</map>
+                        </valueMap>
+                    </settings>
+                </checkbox>
+            </formElements>
+        </field>
+    </fieldset>
+</form>
