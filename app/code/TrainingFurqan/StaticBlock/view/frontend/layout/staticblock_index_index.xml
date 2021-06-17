@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="3columns" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Static-Blocks</title>
+    </head>
+    <body>
+
+        <referenceContainer name="content">
+            <block class="Magento\Cms\Block\Block" name="first_static_block">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">first_static_block</argument>
+                </arguments>
+            </block>
+
+            <block class="Magento\Cms\Block\Block" name="second_static_block">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">second_static_block</argument>
+                </arguments>
+            </block>
+
+
+            <block class="Magento\Cms\Block\Block" name="third_static_block">
+            <arguments>
+                <argument name="block_id" xsi:type="string">third_static_block</argument>
+            </arguments>
+        </block>
+        </referenceContainer>
+
+
+    </body>
+</page>

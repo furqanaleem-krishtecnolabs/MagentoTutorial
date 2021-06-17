@@ -1,0 +1,52 @@
+.pdp-deal-countdown {
+    color: #fff;
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+    background-color: #1979c3;
+    display: flex;
+    font-family: -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen-Sans,
+    Ubuntu,
+    Cantarell,
+    "Helvetica Neue",
+    sans-serif;
+}
+
+#pdp-deal-countdown h1 {
+    font-weight: normal;
+    letter-spacing: .125rem;
+    text-transform: uppercase;
+}
+
+#pdp-deal-countdown li {
+    display: inline-block;
+    font-size: 1.5em;
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+}
+
+#pdp-deal-countdown li span {
+    display: block;
+    font-size: 4.5rem;
+}
+
+
+@media all and (max-width: 768px) {
+    #pdp-deal-countdown  h1 {
+        font-size: 1.5rem;
+    }
+
+    #pdp-deal-countdown  li {
+        font-size: 1.125rem;
+        padding: .75rem;
+    }
+
+    #pdp-deal-countdown  li span {
+        font-size: 3.375rem;
+    }
+}

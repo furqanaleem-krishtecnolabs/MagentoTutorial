@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="TrainingFurqan_ProductDailyDeal::css/deal_timer.css"/>
+    </head>
+    <referenceContainer name="product.info.main">
+        <block class="TrainingFurqan\ProductDailyDeal\Block\Product\Display" name="product.info.timer" as="productInfoCountdown" template="TrainingFurqan_ProductDailyDeal::countdown.phtml" after="alert.urls"/>
+    </referenceContainer>
+</page>
