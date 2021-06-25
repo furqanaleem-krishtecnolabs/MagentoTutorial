@@ -1,0 +1,26 @@
+<?php
+$is_enable_father_name = $block->getConfigValue('customer/general/enable_father_name');
+$is_enable_mother_name = $block->getConfigValue('customer/general/enable_mother_name');
+
+if($is_enable_father_name){
+    ?>
+    <div class="field father name">
+        <label class="label" for="father_name">
+            <span><?= $block->escapeHtml(__("Father's Name")) ?></span>
+        </label>
+        <div class="control">
+            <input type="text" name="father_name" id="father_name" value="" title="<?= $block->escapeHtmlAttr(__("Father's Name")) ?>" class="input-text" >
+        </div>
+    </div>
+<?php } ?>
+
+<?php if($is_enable_mother_name){ ?>
+    <div class="field mother name">
+        <label class="label" for="mother_name">
+            <span><?= $block->escapeHtml(__("Mother's Name")) ?></span>
+        </label>
+        <div class="control">
+            <input type="text" name="mother_name" id="mother_name" value="" title="<?= $block->escapeHtmlAttr(__("Mother's Name")) ?>" class="input-text" >
+        </div>
+    </div>
+<?php } ?>
