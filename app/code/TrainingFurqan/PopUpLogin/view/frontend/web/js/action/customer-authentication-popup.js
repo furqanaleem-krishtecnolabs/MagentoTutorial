@@ -9,7 +9,7 @@ define([
 ], function ($, modal, customerData, storage, $t) {
     'use strict';
 
-    $.widget('trainingfurqan.customerAuthenticationPopup', {
+    $.widget('popuplogin.customerAuthenticationPopup', {
         options: {
             login: '#customer-popup-login',
             nextRegister: '#customer-popup-registration',
@@ -175,5 +175,5 @@ define([
         }
     });
 
-    return $.trainingfurqan.customerAuthenticationPopup;
+    return $.popuplogin.customerAuthenticationPopup;
 });

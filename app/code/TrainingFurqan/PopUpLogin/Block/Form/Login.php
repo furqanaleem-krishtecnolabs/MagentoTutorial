@@ -1,8 +1,6 @@
 <?php
 
-
-namespace TrainingFurqan\PopUpLogin\Block\Form;
-
+namespace TrainingFurqan\PopupLogin\Block\Form;
 
 class Login extends \Magento\Framework\View\Element\Template
 {

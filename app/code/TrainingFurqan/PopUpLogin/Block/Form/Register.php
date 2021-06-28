@@ -1,8 +1,5 @@
 <?php
-
-
-namespace TrainingFurqan\PopUpLogin\Block\Form;
-
+namespace TrainingFurqan\PopupLogin\Block\Form;
 
 use Magento\Customer\Model\AccountManagement;
 
@@ -93,7 +90,7 @@ class Register extends \Magento\Directory\Block\Data
      */
     public function getPostActionUrl()
     {
-        return $this->getUrl('phpcuong/customer_ajax/register');
+        return $this->getUrl('popuplogin/customer_ajax/register');
     }
 
     /**

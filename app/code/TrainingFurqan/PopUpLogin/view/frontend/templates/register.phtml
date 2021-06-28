@@ -60,13 +60,13 @@
                     <button type="submit" class="action submit primary" title="<?php /* @escapeNotVerified */ echo __('Create an Account') ?>"><span><?php /* @escapeNotVerified */ echo __('Create an Account') ?></span></button>
                 </div>
                 <div class="or-another-selection"><?php echo __('or'); ?></div>
-                <div class="secondary"><a class="action remind" href="<?php /* @escapeNotVerified */ echo $block->getBackUrl() ?>" id="customer-popup-sign-in"><span><?php /* @escapeNotVerified */ echo __('Sign In') ?></span></a></div>
+                <div class="secondary"><a class="action remind customer-login-link" href="<?php /* @escapeNotVerified */ echo $block->getBackUrl() ?>" id="customer-popup-sign-in"><span><?php /* @escapeNotVerified */ echo __('Sign In') ?></span></a></div>
             </div>
         </form>
         <script type="text/x-magento-init">
             {
                 "#customer-popup-register": {
-                    "TrainingFurqan_PopUpLogin/js/action/customer-authentication-popup": {
+                    "TrainingFurqan_PopupLogin/js/action/customer-authentication-popup": {
                         "popupTitle": "<?php /* @escapeNotVerified */ echo __('Create an Account'); ?>",
                         "innerWidth": "600"
                     }

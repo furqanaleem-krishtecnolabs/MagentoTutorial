@@ -44,7 +44,7 @@
                             <div class="primary"><button type="submit" class="action login primary" name="send" id="send2-login"><span><?php /* @escapeNotVerified */ echo __('Sign In') ?></span></button></div>
                             <?php if ($block->getRegistration()->isAllowed()): ?>
                                 <div class="or-another-selection"><?php echo __('or'); ?></div>
-                                <div class="secondary"><a class="action remind" href="<?php /* @escapeNotVerified */ echo $block->getCustomerRegistrationUrl() ?>" id="customer-popup-registration"><span><?php /* @escapeNotVerified */ echo __('Create an Account') ?></span></a></div>
+                                <div class="secondary"><a class="action remind customer-register-link" href="<?php /* @escapeNotVerified */ echo $block->getCustomerRegistrationUrl() ?>" id="customer-popup-registration"><span><?php /* @escapeNotVerified */ echo __('Create an Account') ?></span></a></div>
                             <?php endif; ?>
                         </div>
                     </fieldset>
@@ -54,7 +54,7 @@
         <script type="text/x-magento-init">
             {
                 "#customer-popup-login": {
-                    "TrainingFurqan_PopUpLogin/js/action/customer-authentication-popup": {
+                    "TrainingFurqan_PopupLogin/js/action/customer-authentication-popup": {
                         "popupTitle": "<?php /* @escapeNotVerified */ echo __('Sign In') ?>",
                         "innerWidth": "400"
                     }
