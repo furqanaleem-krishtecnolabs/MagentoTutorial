@@ -4,26 +4,28 @@
         <title>Static-Blocks</title>
     </head>
     <body>
-
-        <referenceContainer name="content">
+        <referenceContainer name="sidebar.main">
             <block class="Magento\Cms\Block\Block" name="first_static_block">
                 <arguments>
                     <argument name="block_id" xsi:type="string">first_static_block</argument>
                 </arguments>
             </block>
-
+        </referenceContainer>
+        <referenceContainer name="content">
             <block class="Magento\Cms\Block\Block" name="second_static_block">
                 <arguments>
                     <argument name="block_id" xsi:type="string">second_static_block</argument>
                 </arguments>
             </block>
-
-
+        </referenceContainer>
+        <referenceBlock name="wishlist_sidebar" remove="true"/>
+        <referenceBlock name="catalog.compare.sidebar" remove="true"/>
+        <referenceContainer name="sidebar.additional">
             <block class="Magento\Cms\Block\Block" name="third_static_block">
-            <arguments>
-                <argument name="block_id" xsi:type="string">third_static_block</argument>
-            </arguments>
-        </block>
+                <arguments>
+                    <argument name="block_id" xsi:type="string">third_static_block</argument>
+                </arguments>
+            </block>
         </referenceContainer>
 
 

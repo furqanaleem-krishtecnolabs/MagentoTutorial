@@ -11,7 +11,16 @@ use Magento\Framework\View\Result\PageFactory;
 
 class Index extends Action
 {
+    /**
+     * @var PageFactory
+     */
     protected $pageFactory;
+
+    /**
+     * Index constructor.
+     * @param Context $context
+     * @param PageFactory $pageFactory
+     */
     public function __construct(Context $context,PageFactory $pageFactory)
     {
         $this->pageFactory=$pageFactory;

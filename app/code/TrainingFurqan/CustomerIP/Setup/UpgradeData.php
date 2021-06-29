@@ -11,16 +11,30 @@ use Magento\Customer\Model\Customer;
 
 class UpgradeData implements UpgradeDataInterface
 {
-
+    /**
+     * @var \Magento\Eav\Setup\EavSetupFactory
+     */
     private $eavSetupFactory;
-
+    /**
+     * @var \Magento\Eav\Model\Config
+     */
     private $eavConfig;
-
+    /**
+     * @var \Magento\Customer\Model\ResourceModel\Attribute
+     */
     private $attributeResource;
-
+    /**
+     * @var CustomerSetupFactory
+     */
     protected $customerSetupFactory;
 
-
+    /**
+     * UpgradeData constructor.
+     * @param \Magento\Eav\Setup\EavSetupFactory $eavSetupFactory
+     * @param \Magento\Eav\Model\Config $eavConfig
+     * @param \Magento\Customer\Model\ResourceModel\Attribute $attributeResource
+     * @param CustomerSetupFactory $customerSetupFactory
+     */
     public function __construct(
         \Magento\Eav\Setup\EavSetupFactory $eavSetupFactory,
         \Magento\Eav\Model\Config $eavConfig,

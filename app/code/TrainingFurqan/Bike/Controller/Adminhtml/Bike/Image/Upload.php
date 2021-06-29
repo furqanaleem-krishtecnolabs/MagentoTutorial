@@ -84,7 +84,7 @@ class Upload extends \Magento\Backend\App\Action
             $mediaUrl = $this->storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
             $imageResult['name'] = $newImageName;
             $imageResult['file'] = $newImageName;
-            $imageResult['url'] = $mediaUrl . 'car_image/'. $newImageName;
+            $imageResult['url'] = $mediaUrl . 'bike_image/'. $newImageName;
         } catch (\Exception $e) {
             $imageResult = ['error' => $e->getMessage(), 'errorcode' => $e->getCode()];
         }

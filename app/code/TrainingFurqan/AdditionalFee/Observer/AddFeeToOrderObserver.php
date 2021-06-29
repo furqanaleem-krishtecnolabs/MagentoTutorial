@@ -9,13 +9,25 @@ use Magento\Framework\Event\ObserverInterface;
 
 class AddFeeToOrderObserver implements ObserverInterface
 {
+    /**
+     * @var \TrainingFurqan\AdditionalFee\Helper\Data
+     */
     protected $helperData;
 
+    /**
+     * AddFeeToOrderObserver constructor.
+     * @param \TrainingFurqan\AdditionalFee\Helper\Data $helperData
+     */
     public function __construct(
         \TrainingFurqan\AdditionalFee\Helper\Data $helperData
     ) {
         $this->helperData = $helperData;
     }
+
+    /**
+     * @param EventObserver $observer
+     * @return $this|void
+     */
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
         $order_fee_prec =  $this->helperData->getGeneralConfig('order_processing_fee');

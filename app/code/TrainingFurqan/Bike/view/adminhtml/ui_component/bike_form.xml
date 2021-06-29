@@ -77,16 +77,16 @@
                                 <item name="label" xsi:type="string">Honda</item>
                             </option>
                             <option name="2" xsi:type="array">
-                                <item name="value" xsi:type="string">skoda</item>
-                                <item name="label" xsi:type="string">Skoda</item>
+                                <item name="value" xsi:type="string">bajaj</item>
+                                <item name="label" xsi:type="string">Bjaj</item>
                             </option>
                             <option name="3" xsi:type="array">
-                                <item name="value" xsi:type="string">bmw</item>
-                                <item name="label" xsi:type="string">BMW</item>
+                                <item name="value" xsi:type="string">hero</item>
+                                <item name="label" xsi:type="string">Hero</item>
                             </option>
                             <option name="4" xsi:type="array">
-                                <item name="value" xsi:type="string">audi</item>
-                                <item name="label" xsi:type="string">Audi</item>
+                                <item name="value" xsi:type="string">ktm</item>
+                                <item name="label" xsi:type="string">Ktm</item>
                             </option>
                         </options>
                         <caption translate="true">-- Please Select --</caption>

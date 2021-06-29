@@ -8,8 +8,15 @@ use Magento\Quote\Api\CartRepositoryInterface;
 
 class OrderFee extends AbstractTotal
 {
+    /**
+     * @var CartRepositoryInterface
+     */
     protected $quoteRepository;
 
+    /**
+     * OrderFee constructor.
+     * @param CartRepositoryInterface $quoteRepository
+     */
     public function __construct(
         CartRepositoryInterface $quoteRepository
 
@@ -17,6 +24,11 @@ class OrderFee extends AbstractTotal
         $this->quoteRepository = $quoteRepository;
     }
 
+    /**
+     * @param \Magento\Sales\Model\Order\Invoice $invoice
+     * @return $this|AbstractTotal
+     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     */
     public function collect(\Magento\Sales\Model\Order\Invoice $invoice)
     {
 

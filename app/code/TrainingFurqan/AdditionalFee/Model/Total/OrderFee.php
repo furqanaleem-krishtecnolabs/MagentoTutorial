@@ -7,12 +7,32 @@ namespace TrainingFurqan\AdditionalFee\Model\Total;
 
 class OrderFee extends \Magento\Quote\Model\Quote\Address\Total\AbstractTotal
 {
-
+    /**
+     * @var \Magento\Quote\Model\QuoteValidator|null
+     */
     protected $quoteValidator = null;
+
+    /**
+     * @var \TrainingFurqan\AdditionalFee\Helper\Data
+     */
     protected $helperData;
+    /**
+     * @var \Magento\Checkout\Model\Cart
+     */
     protected $cart;
+
+    /**
+     * @var \Magento\Checkout\Model\Session
+     */
     protected $checkoutSession;
 
+    /**
+     * OrderFee constructor.
+     * @param \Magento\Quote\Model\QuoteValidator $quoteValidator
+     * @param \TrainingFurqan\AdditionalFee\Helper\Data $helperData
+     * @param \Magento\Checkout\Model\Cart $cart
+     * @param \Magento\Checkout\Model\Session $checkoutSession
+     */
     public function __construct(\Magento\Quote\Model\QuoteValidator $quoteValidator,
                                 \TrainingFurqan\AdditionalFee\Helper\Data $helperData,
                                 \Magento\Checkout\Model\Cart $cart,
@@ -24,6 +44,13 @@ class OrderFee extends \Magento\Quote\Model\Quote\Address\Total\AbstractTotal
         $this->cart = $cart;
         $this->checkoutSession = $checkoutSession;
     }
+
+    /**
+     * @param \Magento\Quote\Model\Quote $quote
+     * @param \Magento\Quote\Api\Data\ShippingAssignmentInterface $shippingAssignment
+     * @param \Magento\Quote\Model\Quote\Address\Total $total
+     * @return $this|\Magento\Quote\Model\Quote\Address\Total\AbstractTotal
+     */
     public function collect(
         \Magento\Quote\Model\Quote $quote,
         \Magento\Quote\Api\Data\ShippingAssignmentInterface $shippingAssignment,
@@ -74,6 +101,13 @@ class OrderFee extends \Magento\Quote\Model\Quote\Address\Total\AbstractTotal
         $total->setBaseSubtotalInclTax(0);
     }
 
+    /**
+     * @param \Magento\Quote\Model\Quote $quote
+     * @param \Magento\Quote\Model\Quote\Address\Total $total
+     * @return array
+     * @throws \Magento\Framework\Exception\LocalizedException
+     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     */
     public function fetch(\Magento\Quote\Model\Quote $quote, \Magento\Quote\Model\Quote\Address\Total $total)
     {
         $order_fee =  $this->helperData->getGeneralConfig('order_processing_fee');

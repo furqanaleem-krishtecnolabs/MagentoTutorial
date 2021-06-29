@@ -8,12 +8,24 @@ use Magento\Quote\Api\CartRepositoryInterface;
 
 class Totals extends \Magento\Framework\View\Element\Template
 {
-
+    /**
+     * @var \TrainingFurqan\AdditionalFee\Helper\Data
+     */
     protected $_dataHelper;
     protected $_invoice = null;
     protected $_source;
+    /**
+     * @var CartRepositoryInterface
+     */
     protected $quoteRepository;
 
+    /**
+     * Totals constructor.
+     * @param \Magento\Framework\View\Element\Template\Context $context
+     * @param \TrainingFurqan\AdditionalFee\Helper\Data $dataHelper
+     * @param CartRepositoryInterface $quoteRepository
+     * @param array $data
+     */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         \TrainingFurqan\AdditionalFee\Helper\Data $dataHelper,
@@ -40,6 +52,10 @@ class Totals extends \Magento\Framework\View\Element\Template
         return $this->getParentBlock()->getOrder();
     }
 
+    /**
+     * @return $this
+     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     */
     public function initTotals()
     {
         $this->getParentBlock();
@@ -55,10 +71,7 @@ class Totals extends \Magento\Framework\View\Element\Template
         if(!$order_fee_price) {
             return $this;
         }
-        // $subtotal = $this->getInvoice()->getSubTotal();
-        /* if(!empty($subtotal) && !empty($order_fee_prec)){
-            $order_fee_price = (($subtotal * $order_fee_prec)/100);
-        } */
+
         $total = new \Magento\Framework\DataObject(
             [
                 'code' => 'extrafee',

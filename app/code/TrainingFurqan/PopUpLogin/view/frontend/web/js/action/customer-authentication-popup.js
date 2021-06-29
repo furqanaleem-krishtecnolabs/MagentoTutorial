@@ -17,10 +17,6 @@ define([
             prevLogin: '#customer-popup-sign-in'
         },
 
-        /**
-         *
-         * @private
-         */
         _create: function () {
             var self = this,
                 authentication_options = {
@@ -54,10 +50,7 @@ define([
             this._resetStyleCss();
         },
 
-        /**
-         * Set width of the popup
-         * @private
-         */
+
         _setStyleCss: function(width) {
             width = width || 400;
             if (window.innerWidth > 786) {
@@ -65,10 +58,7 @@ define([
             }
         },
 
-        /**
-         * Reset width of the popup
-         * @private
-         */
+
         _resetStyleCss: function() {
             var self = this;
             $( window ).resize(function() {

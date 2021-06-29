@@ -6,4 +6,4 @@
 
 use Magento\Framework\Component\ComponentRegistrar;
 
-ComponentRegistrar::register(ComponentRegistrar::MODULE, 'TrainingFurqan_UpdateQtyAndStatus', __DIR__);
+ComponentRegistrar::register(ComponentRegistrar::MODULE, 'TrainingFurqan_ProductCron', __DIR__);

@@ -8,12 +8,27 @@ use Magento\Quote\Api\CartRepositoryInterface;
 
 class Totals extends \Magento\Framework\View\Element\Template
 {
+    /**
+     * @var \TrainingFurqan\AdditionalFee\Helper\Data
+     */
     protected $_dataHelper;
-
+    /**
+     * @var \Magento\Directory\Model\Currency
+     */
     protected $_currency;
-
+    /**
+     * @var CartRepositoryInterface
+     */
     protected $quoteRepository;
 
+    /**
+     * Totals constructor.
+     * @param \Magento\Framework\View\Element\Template\Context $context
+     * @param \TrainingFurqan\AdditionalFee\Helper\Data $dataHelper
+     * @param \Magento\Directory\Model\Currency $currency
+     * @param CartRepositoryInterface $quoteRepository
+     * @param array $data
+     */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         \TrainingFurqan\AdditionalFee\Helper\Data $dataHelper,
@@ -43,6 +58,10 @@ class Totals extends \Magento\Framework\View\Element\Template
         return $this->_currency->getCurrencySymbol();
     }
 
+    /**
+     * @return $this
+     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     */
     public function initTotals()
     {
         $order_fee_prec =  $this->_dataHelper->getGeneralConfig('order_processing_fee');
@@ -51,10 +70,6 @@ class Totals extends \Magento\Framework\View\Element\Template
         $this->getOrder();
         $this->getSource();
 
-        /* $subtotal = $this->getOrder()->getSubTotal();
-        if(!empty($subtotal) && !empty($order_fee_prec)){
-            $order_fee_price = (($subtotal * $order_fee_prec)/100);
-        } */
 
         $quoteId = $this->getOrder()->getQuoteId();
         $quote = $this->quoteRepository->get($quoteId);

@@ -10,9 +10,21 @@ use Magento\Framework\HTTP\PhpEnvironment\RemoteAddress;
 
 class CustomerLogin implements ObserverInterface
 {
+    /**
+     * @var \Magento\Customer\Api\CustomerRepositoryInterface
+     */
     protected $_customerRepositoryInterface;
+
+    /**
+     * @var RemoteAddress
+     */
     private $remoteAddress;
 
+    /**
+     * CustomerLogin constructor.
+     * @param \Magento\Customer\Api\CustomerRepositoryInterface $customerRepositoryInterface
+     * @param RemoteAddress $remoteAddress
+     */
     public function __construct(
         \Magento\Customer\Api\CustomerRepositoryInterface $customerRepositoryInterface,
         RemoteAddress $remoteAddress
@@ -21,6 +33,9 @@ class CustomerLogin implements ObserverInterface
         $this->remoteAddress = $remoteAddress;
     }
 
+    /**
+     * @param \Magento\Framework\Event\Observer $observer
+     */
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
         $current_visitor_ip = $this->remoteAddress->getRemoteAddress();

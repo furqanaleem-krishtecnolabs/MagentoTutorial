@@ -9,12 +9,25 @@ use Magento\Quote\Api\CartRepositoryInterface;
 
 class OrderFee extends \Magento\Framework\View\Element\Template
 {
-
+    /**
+     * @var \Magento\Tax\Model\Config
+     */
     protected $_config;
     protected $_order;
     protected $_source;
+    /**
+     * @var CartRepositoryInterface
+     */
     protected $quoteRepository;
 
+    /**
+     * OrderFee constructor.
+     * @param \Magento\Framework\View\Element\Template\Context $context
+     * @param \Magento\Tax\Model\Config $taxConfig
+     * @param \TrainingFurqan\AdditionalFee\Helper\Data $helperData
+     * @param CartRepositoryInterface $quoteRepository
+     * @param array $data
+     */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         \Magento\Tax\Model\Config $taxConfig,
@@ -61,6 +74,10 @@ class OrderFee extends \Magento\Framework\View\Element\Template
         return $this->getParentBlock()->getValueProperties();
     }
 
+    /**
+     * @return $this
+     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     */
     public function initTotals()
     {
 
@@ -70,11 +87,6 @@ class OrderFee extends \Magento\Framework\View\Element\Template
 
         $store = $this->getStore();
 
-        /*   $order_fee_prec =  $this->helperData->getGeneralConfig('order_processing_fee');
-          $subtotal = $this->_order->getSubTotal();
-          if(!empty($subtotal) && !empty($order_fee_prec)){
-              $order_fee_price = (($subtotal * $order_fee_prec)/100);
-          } */
         $quoteId = $this->_order->getQuoteId();
         $quote = $this->quoteRepository->get($quoteId);
         $order_fee_price = $quote->getExtrafee();
