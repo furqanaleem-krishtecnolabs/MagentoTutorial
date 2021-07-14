@@ -1,0 +1,12 @@
+<?php
+$pageId = $block->getRequest()->getParam('page_id');
+$activeClass = '';
+if ($pageId == '7') {
+    $activeClass = 'active';
+}
+?>
+<li class="level0 <?= $activeClass; ?> last level-top ui-menu-item">
+    <a class="level-top ui-corner-all" href="<?= $block->getUrl('faq'); ?>">
+        <?= __('FAQs'); ?>
+    </a>
+</li>

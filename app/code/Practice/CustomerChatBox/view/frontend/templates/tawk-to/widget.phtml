@@ -1,0 +1,11 @@
+<?php
+
+/** @var $block \Magento\Framework\View\Element\Template **/
+$customerChatboxHelperData = $this->helper('Practice\CustomerChatbox\Helper\Data');
+?>
+<!-- Tawk.to Widget -->
+<?php if ($customerChatboxHelperData->getTawkToWidgetStatus()): ?>
+    <!-- Widget Code -->
+    <?= $customerChatboxHelperData->getTawkToWidgetCode(); ?>
+<?php endif; ?>
+<!-- End Tawk.to Widget -->

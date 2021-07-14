@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Practice_BannerSlider::banners_slider" title="BannerSlider" translate="title" module="Practice_BannerSlider" sortOrder="20" resource="Practice_BannerSlider::banners_slider"/>
+        <add id="Practice_BannerSlider::all_banners" title="All Banners" translate="title" module="Practice_BannerSlider" sortOrder="10" resource="Practice_BannerSlider::all_banners" parent="Practice_BannerSlider::banners_slider" action="banners_slider/banner/index"/>
+        <add id="Practice_BannerSlider::all_groups" title="All Groups" translate="title" module="Practice_BannerSlider" sortOrder="10" resource="Practice_BannerSlider::all_groups" parent="Practice_BannerSlider::banners_slider" action="banners_slider/group/index"/>
+    </menu>
+</config>

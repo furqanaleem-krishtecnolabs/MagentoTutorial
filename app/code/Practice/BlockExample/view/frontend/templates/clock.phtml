@@ -1,0 +1,20 @@
+<div id="uic-clock-container" data-bind="scope:'uiclock'">
+<!--    ko template:getTemplate()-->
+<!--    /ko-->
+</div>
+<script type="text/x-magento-init">
+    {
+        "#uic-clock-container":{
+            "Magento_Ui/js/core/app":{
+                "components":{
+                    "uiclock":{
+                    "component":"Practice_BlockExample/js/view/clock",
+                    "config":{
+                        "template":"Practice_BlockExample/clock"
+                        }
+                    }
+                }
+            }
+        }
+    }
+</script>
