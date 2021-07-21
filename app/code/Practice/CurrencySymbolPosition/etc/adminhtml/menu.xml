@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Practice_CurrencySymbolPosition::symbols_position" title="Currency Symbols Position" translate="title" module="Practice_CurrencySymbolPosition" sortOrder="30" parent="Magento_CurrencySymbol::system_currency" action="adminhtml/system_currencysymbolposition" resource="Practice_CurrencySymbolPosition::symbols_position"/>
+    </menu>
+</config>

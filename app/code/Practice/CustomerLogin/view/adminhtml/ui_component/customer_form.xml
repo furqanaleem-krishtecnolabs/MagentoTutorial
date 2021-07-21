@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <fieldset name="customer">
+        <field name="login_status" formElement="checkbox">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">customer</item>
+                    <item name="prefer" xsi:type="string">toggle</item>
+                    <item name="valueMap" xsi:type="array">
+                        <item name="true" xsi:type="string">1</item>
+                        <item name="false" xsi:type="string">0</item>
+                    </item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>boolean</dataType>
+                <visible>true</visible>
+            </settings>
+        </field>
+        <field name="reason" formElement="select">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">customer</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <visible>true</visible>
+            </settings>
+        </field>
+    </fieldset>
+</form>
