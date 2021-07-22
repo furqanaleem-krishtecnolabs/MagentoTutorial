@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="category.product.addto">
+            <block class="Practice\ProductQuickView\Block\Product\ProductList\Item\QuickView" name="product.quick.view.link" as="product_quick_view_link" template="Practice_ProductQuickView::quick-view-link.phtml"/>
+        </referenceBlock>
+        <referenceContainer name="before.body.end">
+            <block class="Practice\ProductQuickView\Block\Product" name="product.quick.view" as="product_quick_view" template="Practice_ProductQuickView::quick-view.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

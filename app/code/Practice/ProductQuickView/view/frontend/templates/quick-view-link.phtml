@@ -1,0 +1,16 @@
+<?php
+/**
+ * @var \Practice\ProductQuickView\Block\Product\ProductList\Item\QuickView $block
+ */
+?>
+<?php $_item = $block->getProduct(); ?>
+<!-- This path is for all products but excluding the configurable products -->
+<?php $viewPath = 'practice_product_quickview/product/view'; ?>
+<?php if ($_item->getTypeId() == 'configurable'): ?>
+    <!-- This path is for the configurable products -->
+    <?php $viewPath = 'practice_product_quickview/product/view_configurable'; ?>
+<?php endif; ?>
+<?php $quickViewUrl = $block->getUrl($viewPath, ['id' => $_item->getId(), 'category' => (int)$_item->getCategoryId()]); ?>
+<a class="quick-view practice" quick-view-url="<?= $quickViewUrl; ?>" href="<?= $quickViewUrl; ?>">
+    <span><?= __('Quick View'); ?></span>
+</a>

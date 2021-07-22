@@ -1,0 +1,85 @@
+<?php
+
+/**
+ * @var \Practice\ProductQuickView\Block\Product $block
+ */
+?>
+    <style type="text/css">.quick-view.practice{display:none;}</style>
+<?php if ($block->displayQuickView()): ?>
+    <style>.quick-view.practice{display:inline-block;}.popup_quickview_container{margin:0 auto}.popup_quickview_container .modal-inner-wrap{width:90%;max-width:1100px}.popup_quickview_container .modal-inner-wrap .action-close:before{font-size:20px;line-height:20px;color:#4eb8ba;border:2px solid #4eb8ba;padding:5px;border-radius:50px}.popup_quickview_container .modal-inner-wrap .action-close:hover:before{color:#197979;border-color:#197979}.practice-quickview-container{display:none;min-height:100px}.practice-quickview-container iframe{min-height:300px;max-height:100%}.practice-quickview-container .loading-mask{margin:45px}.practice-quickview-container .loading-mask .loader img{max-width:64px}.action.todetail{line-height:2.2rem;padding:14px 17px;font-size:1.8rem;width:100%}@media (min-width: 768px){.action.todetail{width:49%}}
+    </style>
+    <div id="practice-quickview-container" class="practice-quickview-container">
+        <div data-role="loader" class="loading-mask" >
+            <div class="loader">
+                <img src="<?php /* @escapeNotVerified */ echo $block->getViewFileUrl('images/loader-1.gif'); ?>" alt="<?php /* @escapeNotVerified */ echo __('Loading...') ?>">
+            </div>
+        </div>
+        <div class="quickview-content"></div>
+    </div>
+    <script>
+        require([
+            'jquery',
+            'Practice_ProductQuickView/js/modal/modal'
+        ], function($, customModal) {
+            var popup_quickview_container = {
+                type: 'popup',
+                responsive: true,
+                innerScroll: true,
+                buttons: false,
+                clickableOverlay: false,
+                modalClass : 'popup_quickview_container',
+            }, quickViewContainer = $('#practice-quickview-container');
+
+            customModal(popup_quickview_container, $('#practice-quickview-container'));
+
+            $('.quick-view.practice').on('click', function() {
+                $('.popup_quickview_container').css({'max-width': '250px', 'height': '250px'});
+                $('.popup_quickview_container').find('.action-close').hide();
+                quickViewContainer.find('.loading-mask').show();
+                quickViewContainer.find('.quickview-content').html('');
+                quickViewContainer.find('.quickview-content').hide();
+                $('#practice-quickview-container').customModal("openModal");
+                var _quickViewUrl = $(this).attr('quick-view-url');
+                var iframeContent = $('<iframe/>', {
+                    id: 'practice-quickview-iframe',
+                    src: _quickViewUrl,
+                    scrolling: 'no',
+                    frameborder: 0,
+                    width: '100%',
+                    height: $(window).height()+'px',
+                    load: function() {
+                        $('.popup_quickview_container').find('.action-close').show();
+                        $('.popup_quickview_container').css({'max-width': 'inherit', 'height': 'inherit'});
+                        quickViewContainer.find('.loading-mask').hide();
+                        quickViewContainer.find('.quickview-content').show();
+                        $('#practice-quickview-iframe').height($('#practice-quickview-iframe').contents().find('#maincontent .columns').height() + 60);
+                        setHeightIframe(iframeContent);
+                    }
+                });
+                quickViewContainer.find('.quickview-content').append(iframeContent);
+                return false;
+            });
+
+            function setHeightIframe(ifr) {
+                var _self = this,
+                    _time = 0,
+                    _ifr = document.getElementById('practice-quickview-iframe');
+                if (typeof ifr === 'undefined' || ifr === null || typeof _ifr === 'undefined' || _ifr === null) return;
+                var ifr_height = _ifr.getAttribute('height'),
+                    _content = _ifr.contentWindow;
+                if (typeof _content === 'undefined' || _content === null || _content.document.body === null) return;
+                var _content_temp = $(_content.document.body).height();
+                if (typeof _content_temp !== 'undefined') {
+                    if (ifr.height() !== _content_temp) {
+                        ifr.height(_content_temp);
+                    }
+                }
+                if (_time == 'undefined') _time = 0;
+                clearTimeout(_time);
+                _time = setTimeout(function() {
+                    setHeightIframe(ifr);
+                }, 500);
+            }
+        });
+    </script>
+<?php endif; ?>

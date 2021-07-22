@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+        <route id="practice_product_quickview" frontName="practice_product_quickview">
+            <module name="Practice_ProductQuickView"/>
+        </route>
+    </router>
+</config>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="catalog_product_view"/>
+    <body>
+        <referenceContainer name="header.container" remove="true"/>
+        <referenceContainer name="page.top" remove="true"/>
+        <referenceContainer name="footer-container" remove="true"/>
+        <referenceContainer name="product.info.social" remove="true"/>
+        <referenceContainer name="product.info.extrahint" remove="true"/>
+        <referenceBlock name="catalog.product.related" remove="true"/>
+        <referenceBlock name="next.and.prev.product" remove="true"/>
+        <referenceBlock name="product.info.upsell" remove="true"/>
+        <referenceBlock name="header.container" remove="true"/>
+        <referenceBlock name="copyright" remove="true" />
+        <referenceBlock name="authentication-popup" remove="true" />
+        <referenceBlock name="header.content" remove="true"/>
+        <referenceBlock name="footer.content" remove="true"/>
+        <referenceBlock name="catalog.product.related.theme" remove="true"/>
+        <referenceBlock name="product.info.upsell.theme" remove="true"/>
+        <referenceBlock name="div.sidebar" remove="true"/>
+        <referenceBlock name="div.sidebar.left" remove="true"/>
+        <referenceBlock name="div.sidebar.right" remove="true"/>
+        <referenceBlock name="social.button.detail" remove="true"/>
+        <referenceBlock name="category.product.type.details.renderers">
+            <block class="Magento\Swatches\Block\Product\Renderer\Listing\Configurable" name="category.product.type.details.renderers.configurable" as="configurable" template="Magento_Swatches::product/listing/renderer.phtml" ifconfig="catalog/frontend/show_swatches_in_product_list" />
+        </referenceBlock>
+    </body>
+</page>
