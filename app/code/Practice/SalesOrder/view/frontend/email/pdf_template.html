@@ -1,0 +1,16 @@
+<!--@subject {{var store.getWebsite().getName()}} {{trans "Your Invoice #%invoice_id for Order #%order_id" invoice_id=$invoice.increment_id order_id=$order.increment_id}}@-->
+<!--@vars {} @-->
+{{template config_path="design/email/header_template"}}
+
+<table>
+    <tr class="email-intro">
+        <td>
+            <p class="greeting">{{trans "Dear"}} {{var customer_name}},</p>
+            <p>
+                {{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}
+            </p>
+            <p>{{trans "Your Invoice #%invoice_id for Order #%order_id" invoice_id=$invoice.increment_id order_id=$order.increment_id}}</p>
+            <p>{{trans "Best Regards"}},<br> {{trans "The Sales Team"}}.</p>
+        </td>
+    </tr>
+</table>
