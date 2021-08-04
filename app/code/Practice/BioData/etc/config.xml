@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <person_bio>
+            <general>
+                <enable>1</enable>
+            </general>
+            <storefront>
+                <bio_link>My bio</bio_link>
+                <set_limit>10</set_limit>
+            </storefront>
+        </person_bio>
+    </default>
+</config>

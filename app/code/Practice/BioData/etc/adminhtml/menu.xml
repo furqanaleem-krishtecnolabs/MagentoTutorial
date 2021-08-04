@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Practice_BioData::person" title="Person" translate="title" module="Practice_BioData" sortOrder="10" dependsOnModule="Practice_BioData"
+             resource="Practice_BioData::biodata"/>
+        <add id="Practice_BioData::biodata" title="BioData" translate="title" module="Practice_BioData" parent="Practice_BioData::person" sortOrder="20"
+        dependsOnModule="Practice_BioData" resource="Practice_BioData::biodata"/>
+        <add id="Practice_BioData::biodata_info" title="BioData Info" translate="title" module="Practice_BioData" parent="Practice_BioData::biodata"
+        sortOrder="10" dependsOnModule="Practice_BioData" action="biodata/info" resource="Practice_BioData::biodata"/>
+        <add id="Practice_BioData::settings" title="Settings" translate="title" module="Practice_BioData" parent="Practice_BioData::person" sortOrder="30"
+             dependsOnModule="Practice_BioData" resource="Practice_BioData::settings"/>
+        <add id="Practice_BioData::bio::config" title="Configuration" translate="title" module="Practice_BioData" parent="Practice_BioData::settings" sortOrder="40"
+             dependsOnModule="Practice_BioData" action="adminhtml/system_config/edit/section/person_bio" resource="Practice_BioData::bio_config"/>
+    </menu>
+</config>
