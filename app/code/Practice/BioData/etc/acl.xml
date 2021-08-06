@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Practice_BioData::person" title="Person" sortOrder="51">
+                    <resource id="Practice_BioData::biodata_allnews" title="All biodata" sortOrder="10">
+                        <resource id="Practice_BioData::save" title="Save biodata" translate="title" sortOrder="10" />
+                        <resource id="Practice_BioData::biodata_delete" title="Delete biodata" translate="title" sortOrder="20" />
+                    </resource>
+                </resource>
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="Practice_BioData::biodata_config" title="Practice biodata" translate="title"/>
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

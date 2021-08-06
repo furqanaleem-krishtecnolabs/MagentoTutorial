@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <preference for="Practice\BioData\Api\Data\BioDataInterface" type="Practice\News\Model\BioData" />
+    <preference for="Practice\BioData\Api\BioDataRepositoryInterface" type="Practice\BioData\Model\BioDataRepository" />
+
+    <virtualType name="BioDataGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Practice\BioData\Model\ResourceModel\BioData\Collection</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="biodata_info_listing_data_source" xsi:type="string">Practice\BioData\Model\ResourceModel\BioData\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Practice\BioData\Model\ResourceModel\BioData\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">bio_data</argument>
+            <argument name="eventPrefix" xsi:type="string">practice_biodata_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">practice_biodata_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Practice\BioData\Model\ResourceModel\BioData</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\Model\Entity\RepositoryFactory">
+        <arguments>
+            <argument name="entities" xsi:type="array">
+                <item name="Practice\BioData\Api\Data\BioDataInterface" xsi:type="string">Practice\BioData\Api\BioDataRepositoryInterface</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

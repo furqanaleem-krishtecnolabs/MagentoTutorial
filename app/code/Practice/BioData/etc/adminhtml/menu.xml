@@ -16,6 +16,6 @@
         <add id="Practice_BioData::settings" title="Settings" translate="title" module="Practice_BioData" parent="Practice_BioData::person" sortOrder="30"
              dependsOnModule="Practice_BioData" resource="Practice_BioData::settings"/>
         <add id="Practice_BioData::bio::config" title="Configuration" translate="title" module="Practice_BioData" parent="Practice_BioData::settings" sortOrder="40"
-             dependsOnModule="Practice_BioData" action="adminhtml/system_config/edit/section/person_bio" resource="Practice_BioData::bio_config"/>
+             dependsOnModule="Practice_BioData" action="adminhtml/system_config/edit/section/person_bio" resource="Practice_BioData::biodata_config"/>
     </menu>
 </config>
