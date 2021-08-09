@@ -1,0 +1,24 @@
+<div class="rsgitech-news">
+    <?php $allnews = $this->getLisBioData() ?>
+    <?php if($allnews && count($allnews)): ?>
+        <?php foreach($allnews as $news): ?>
+            <div class="rsg-news-list">
+                <div class="rsg-news-title">
+                    <a href="#">
+                        <?php echo $news->getName() ?>
+                    </a>
+                </div>
+                <div class="rsg-news-time"><?php echo $news->getCreatedAt() ?></div>
+                <div class="rsg-news-desc"><?php echo $news->getDescription() ?></div>
+            </div>
+        <?php endforeach; ?>
+
+        <?php if($this->getPagerHtml()): ?>
+            <?php echo $this->getPagerHtml(); ?>
+        <?php endif; ?>
+    <?php else: ?>
+        <div class="rsgitech-no-records">
+            <?php echo __('News not available'); ?>
+        </div>
+    <?php endif; ?>
+</div>
